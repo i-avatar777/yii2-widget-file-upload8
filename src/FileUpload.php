@@ -38,7 +38,7 @@ class FileUpload extends InputWidget
 
     /** @var  array
      * - maxSize - int - кол-во КБ
-     * - allowedExtensions - Array - массив рисширений которые можно грузить, по умолчанию ['jpg', 'jpeg', 'png']
+     * - allowedExtensions - Array - массив рисширений которые можно грузить, по умолчанию []
      * - data - Array - массив для отправки постом при загрузке
      * - controller - string - идентификатор контроллера
      * - server - string - адрес сервера для загрузки
