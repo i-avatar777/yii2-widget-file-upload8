@@ -73,7 +73,7 @@ class FileUpload extends InputWidget
             "class" => "btn btn-primary btn-large clearfix upload-btn buttonDragAndDrop",
         ]);
         $maxSize = ArrayHelper::getValue($this->settings, 'maxSize', 1000);
-        $allowedExtensions = ArrayHelper::getValue($this->settings, 'allowedExtensions', ['jpg', 'png', 'jpeg']);
+        $allowedExtensions = ArrayHelper::getValue($this->settings, 'allowedExtensions', []);
         $s = join(',', $allowedExtensions) . ' ' . '(' . $maxSize . ' Кб макс)';
         $html[] = Html::tag('span', Html::tag('i', $s), [
             "style" => "padding-left:5px;vertical-align:middle;",
