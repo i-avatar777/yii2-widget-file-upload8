@@ -9,6 +9,7 @@ var FileUpload8 = {
         var accept1 = (typeof options.accept != 'undefined') ? options.accept : 'image/*';
         var data1 = (typeof options.data != 'undefined') ? options.data : {};
         var controller1 = (typeof options.controller != 'undefined') ? options.controller : 'upload2';
+        var buttonLabel1 = (typeof options.button_label != 'undefined') ? options.button_label : 'Выбери файл';
 
         var btn = $(selector).find('.upload-btn')[0];
         var wrap = $(selector).find('.pic-progress-wrap')[0];
@@ -56,7 +57,7 @@ var FileUpload8 = {
                 self.setFileSizeBox(size);
 
                 errBox.innerHTML = '';
-                btn.value = 'Выбери файл';
+                btn.value = buttonLabel1;
             },
             onSizeError: function() {
                 errBox.innerHTML = 'Файл не может быть более ' + maxSize1 + 'K.';
