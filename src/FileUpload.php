@@ -69,7 +69,9 @@ class FileUpload extends InputWidget
     {
         $this->registerClientScript();
         $html = [];
-        $html[] = Html::input('button', null, 'Выбери файл', [
+
+        $button_label = ArrayHelper::getValue($this->settings, 'button_label', 'Выбери файл');
+        $html[] = Html::input('button', null, $button_label, [
             "class" => "btn btn-primary btn-large clearfix upload-btn buttonDragAndDrop",
         ]);
         $maxSize = ArrayHelper::getValue($this->settings, 'maxSize', 1000);
