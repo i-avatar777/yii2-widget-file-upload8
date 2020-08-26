@@ -36,7 +36,8 @@ class FileUpload extends InputWidget
     /** вписать с фоном */
     const MODE_THUMBNAIL_WHITE = 'white';
 
-    /** @var  array
+    /**
+     * @var  array
      * - maxSize - int - кол-во КБ
      * - allowedExtensions - Array - массив рисширений которые можно грузить, по умолчанию []
      * - data - Array - массив для отправки постом при загрузке
@@ -44,6 +45,11 @@ class FileUpload extends InputWidget
      * - server - string - адрес сервера для загрузки
      */
     public $settings;
+
+    /**
+     * @var  array Настройки поумолчанию для параметра $settings
+     */
+    public $defaultSettings = ['accept' => '*/*'];
 
     /** @var  array массив на обработку изображения */
     public $update;
@@ -57,8 +63,11 @@ class FileUpload extends InputWidget
             $attrubute = $this->attribute;
             $this->value = $this->model->$attrubute;
         }
+
         if (is_null($this->settings)) {
-            $this->settings = [];
+            $this->settings = $this->defaultSettings;
+        } else {
+            $this->settings = ArrayHelper::merge($this->defaultSettings, $this->settings);
         }
     }
 

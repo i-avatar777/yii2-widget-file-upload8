@@ -22,14 +22,14 @@
 
 ## Параметры
 
-FileUpload7.init(options)
+FileUpload7.init(options) и массив `\iAvatar777\widgets\FileUpload8\FileUpload::$settings`
 
 - `controller` - идентификатор контроллера который направлен на \iAvatar777\assets\JqueryUpload1\Upload2Controller
 - `selector` - запрос JQuery идентифицирующий элемент (input) загрузки. по умолчанию `'.FileUpload7'`
 - `maxSize` - макс размер файла в KB
 - `server` - путь к внешнему серверу, по умолчанию '' (Например 'https://cloud1.i-am-avatar.com')
 - `allowedExtensions` - массив расширений которые возможны для загрузки. По умолчанию `['jpg', 'jpeg', 'png']`
-- `accept` - mime тип который можно загрузить. По умолчанию `'image/*'`
+- `accept` - mime тип который можно загрузить. По умолчанию `'*/*'`
 - `data` - Массив данных которые надо передать на действие сохранения файла
 - `button_label` - текст на кнопке
 
