@@ -77,7 +77,7 @@ var FileUpload8 = {
                     $(selector).find('.inputValue').val(response.url);
 
                     // Показываю файл
-                    picBox.innerHTML = '<code class="fileUploadedUrl">' + response.url + '</code>';
+                    picBox.innerHTML = '<span class="fileUploadedUrl" style="font-family: monospace;">' + response.url + '</span>';
                 } else {
                     if (response.msg)  {
                         errBox.innerHTML = response.msg;
