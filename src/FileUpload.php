@@ -102,7 +102,7 @@ class FileUpload extends InputWidget
 
         $v = null;
         if (!Application::isEmpty($this->value)) {
-            $v = '<img src="' . $this->value . '" style="width:100%;max-width:200px">';
+            $v = Html::tag('span', $this->value, ['class' => 'fileUploadedUrl', 'style' => 'font-family: monospace;']);
         }
         $html[] = Html::tag('div', $v, [
             "data-id" => "picture",
