@@ -93,7 +93,7 @@ class FileUpload extends InputWidget
             "class" => "clearfix redtext errormsg",
             "style" => "padding-top: 10px;",
         ]);
-        $html[] = Html::hiddenInput(Html::getInputName($this->model, $this->attribute), $this->value, ['class' => 'inputValue']);
+        $html[] = Html::hiddenInput(Html::getInputName($this->model, $this->attribute), $this->value, ['class' => 'inputValue', 'id' => Html::getInputId($this->model, $this->attribute]);
 
         $html[] = Html::tag('div', null, [
             "class" => "progress-wrap pic-progress-wrap",
