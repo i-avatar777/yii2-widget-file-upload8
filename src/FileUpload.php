@@ -2,7 +2,6 @@
 
 namespace iAvatar777\widgets\FileUpload8;
 
-use cs\Application;
 use cs\services\File;
 use cs\services\SitePath;
 
@@ -72,6 +71,32 @@ class FileUpload extends InputWidget
     }
 
     /**
+     * Если null => true
+     * Если is_string => Если длина == 0 ? true : false
+     * Если is_object => false
+     * Если is_array => Если длина == 0 ? true : false
+     *
+     * @param $val
+     *
+     * @return bool
+     */
+    public static function isEmpty($val)
+    {
+        if (is_null($val)) return true;
+        if (is_string($val)) {
+            if (strlen($val) == 0) return true;
+            return false;
+        }
+        if (is_object($val)) return false;
+        if (is_array($val)) {
+            if (count($val) == 0) return true;
+            return false;
+        }
+
+        return false;
+    }
+
+    /**
      * Renders the widget.
      */
     public function run()
@@ -101,7 +126,7 @@ class FileUpload extends InputWidget
         ]);
 
         $v = null;
-        if (!Application::isEmpty($this->value)) {
+        if (!self::isEmpty($this->value)) {
             $v = Html::tag('span', $this->value, ['class' => 'fileUploadedUrl', 'style' => 'font-family: monospace;']);
         }
         $html[] = Html::tag('div', $v, [
